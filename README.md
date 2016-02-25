@@ -21,7 +21,7 @@ Account Info
 
 ```
 
-Add URL upload
+Add URL Upload
 --------------
 
 ```
