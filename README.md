@@ -63,3 +63,24 @@ Check URL Upload
 </script>
 
 ```
+
+Upload Server Request
+---------------------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.GetUploadServer(
+        {
+            key: 'your_key'
+        },
+        function(result){
+            console.log(result.url);
+            console.log(result.srv_id);
+            console.log(result.disk_id);
+        }
+    );
+</script>
+
+```
