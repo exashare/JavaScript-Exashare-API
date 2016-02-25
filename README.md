@@ -41,3 +41,25 @@ Add URL upload
 </script>
 
 ```
+
+Check URL Upload
+----------------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.CheckUploadURL(
+        {
+            key: 'your_key',
+            id: 'queue_id'
+        },
+        function(result){
+            console.log(result.status);
+            console.log(result.url);
+            console.log(result.file_code);
+        }
+    );
+</script>
+
+```
