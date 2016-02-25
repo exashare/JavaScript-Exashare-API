@@ -20,3 +20,24 @@ Account Info
 </script>
 
 ```
+
+Add URL upload
+--------------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.UploadURL(
+        {
+            key: 'your_key',
+            url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+            folder: 'name_your_folder'
+        },
+        function(result){
+            console.log(result.queue_id);
+        }
+    );
+</script>
+
+```
