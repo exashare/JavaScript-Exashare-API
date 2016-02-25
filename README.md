@@ -8,7 +8,7 @@ Account info
 
 <script src="ExashareAPI.js"></script>
 <script>
-    ExashareAPI.CheckFiles(
+    ExashareAPI.AccountInfo(
         {
             key: 'your_key'
         },
