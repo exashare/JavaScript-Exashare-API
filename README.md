@@ -1,6 +1,9 @@
 # JavaScript-Exashare-API
 A Web Service for the Exashare API
 
+## VERSION
+0.01
+
 Account Info
 ------------
 
@@ -13,8 +16,10 @@ Account Info
             key: 'your_key'
         },
         function(result){
-            console.log(result.login);
-            console.log(result.money);
+            if(!result.error){
+                console.log(result.login);
+                console.log(result.money);
+            }
         }
     );
 </script>
