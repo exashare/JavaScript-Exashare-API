@@ -101,6 +101,22 @@ var ExashareAPI = {
         self.Request(hash, callback);
     },
     
+    CheckFilesDMCA: function(values, callback){
+        var self = this;
+        
+        var hash = [];
+        hash['op'] = 'files_dmca';
+        hash['key'] = values.key;
+        if (values.date) {
+            hash['date'] = values.date;
+        }
+        if (values.order) {
+            hash['order'] = values.order;
+        }
+        
+        self.Request(hash, callback);
+    },
+    
     Request: function(hash, callback){
         var self = this;
         
@@ -128,18 +144,10 @@ var ExashareAPI = {
             }
         };
         
-        var param = null;
-        
-        var n = 1;
+        var param = 'version=0.01';
         
         for(var row in hash){
-            if(n == 1){
-                param = row + '=' + hash[row];
-            }else{
-                param += '&' + row + '=' + hash[row];
-            }
-            
-            n++;
+            param += '&' + row + '=' + hash[row];
         }
         
         var url = 'http://exashare.com/cgi-bin/xapi.cgi';
