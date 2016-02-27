@@ -1,7 +1,7 @@
 # JavaScript Exashare API
 A Web Service for the Exashare API
 
-## API VERSION
+## VERSION API
 0.01
 
 Account Info
