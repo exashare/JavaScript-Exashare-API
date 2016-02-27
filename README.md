@@ -84,3 +84,94 @@ Upload Server Request
 </script>
 
 ```
+
+Check Files
+-----------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.CheckFiles(
+        {
+            key: 'your_key',
+            files: [
+                1a1a1a1a1a1a,
+                1b1b1b1b1b1b,
+                2c2c2c2c2c2c
+            ]
+        },
+        function(result){
+            for(var row in result){
+                console.log(result[row].file_code);
+            }
+        }
+    );
+</script>
+
+```
+
+Renew File code
+---------------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.RenewFile(
+        {
+            key: 'your_key',
+            file_code: '1a1a1a1a1a1a'
+        },
+        function(result){
+            console.log(result.file_code);
+        }
+    );
+</script>
+
+```
+
+Clone File code
+---------------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.CloneFile(
+        {
+            key: 'your_key',
+            file_code: '1a1a1a1a1a1a',
+            folder: 'name_your_folder',
+            new_title: 'new_title_to_file_cloned'
+        },
+        function(result){
+            console.log(result.file_code);
+        }
+    );
+</script>
+
+```
+
+Check Files DMCA
+----------------
+
+```
+
+<script src="ExashareAPI.js"></script>
+<script>
+    ExashareAPI.CheckFilesDMCA(
+        {
+            key: 'your_key',
+            date: 'YYYY-MM-DD',
+            order: 'down'
+        },
+        function(result){
+            for(var row in result){
+                console.log(result[row].file_code);
+                console.log(result[row].dmca_created);
+                console.log(result[row].dmca_expire);
+            }
+        }
+    );
+</script>
