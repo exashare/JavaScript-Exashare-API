@@ -1,7 +1,7 @@
-# JavaScript-Exashare-API
+# JavaScript Exashare API
 A Web Service for the Exashare API
 
-## VERSION
+## API VERSION
 0.01
 
 Account Info
@@ -19,6 +19,8 @@ Account Info
             if(!result.error){
                 console.log(result.login);
                 console.log(result.money);
+            }else{
+                console.log(result.error);
             }
         }
     );
@@ -40,7 +42,11 @@ Add URL Upload
             folder: 'name_your_folder'
         },
         function(result){
-            console.log(result.queue_id);
+            if(!result.error){
+                console.log(result.queue_id);
+            }else{
+                console.log(result.error);
+            }
         }
     );
 </script>
@@ -60,9 +66,13 @@ Check URL Upload
             id: 'queue_id'
         },
         function(result){
-            console.log(result.status);
-            console.log(result.url);
-            console.log(result.file_code);
+            if(!result.error){
+                console.log(result.status);
+                console.log(result.url);
+                console.log(result.file_code);
+            }else{
+                console.log(result.error);
+            }
         }
     );
 </script>
@@ -81,9 +91,13 @@ Upload Server Request
             key: 'your_key'
         },
         function(result){
-            console.log(result.url);
-            console.log(result.srv_id);
-            console.log(result.disk_id);
+            if(!result.error){
+                console.log(result.url);
+                console.log(result.srv_id);
+                console.log(result.disk_id);
+            }else{
+                console.log(result.error);
+            }
         }
     );
 </script>
@@ -107,8 +121,12 @@ Check Files
             ]
         },
         function(result){
-            for(var row in result){
-                console.log(result[row].file_code);
+            if(!result.error){
+                for(var row in result){
+                    console.log(result[row].file_code);
+                }
+            }else{
+                console.log(result.error);
             }
         }
     );
@@ -129,7 +147,11 @@ Renew File code
             file_code: '1a1a1a1a1a1a'
         },
         function(result){
-            console.log(result.file_code);
+            if(!result.error){
+                console.log(result.file_code);
+            }else{
+                console.log(result.error);
+            }
         }
     );
 </script>
@@ -151,7 +173,11 @@ Clone File code
             new_title: 'new_title_to_file_cloned'
         },
         function(result){
-            console.log(result.file_code);
+            if(!result.error){
+                console.log(result.file_code);
+            }else{
+                console.log(result.error);
+            }
         }
     );
 </script>
@@ -172,10 +198,14 @@ Check Files DMCA
             order: 'down'
         },
         function(result){
-            for(var row in result){
-                console.log(result[row].file_code);
-                console.log(result[row].dmca_created);
-                console.log(result[row].dmca_expire);
+            if(!result.error){
+                for(var row in result){
+                    console.log(result[row].file_code);
+                    console.log(result[row].dmca_created);
+                    console.log(result[row].dmca_expire);
+                }
+            }else{
+                console.log(result.error);
             }
         }
     );
