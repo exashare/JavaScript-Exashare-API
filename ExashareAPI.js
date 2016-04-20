@@ -144,13 +144,13 @@ var ExashareAPI = {
             }
         };
         
-        var param = 'version=0.01';
+        var param = 'version=0.02';
         
         for(var row in hash){
             param += '&' + row + '=' + hash[row];
         }
         
-        var url = 'http://exashare.com/cgi-bin/xapi.cgi';
+        var url = 'http://exashare.com/api';
         url += param != null ? '?'+param : '';
         
         request.open('GET', url, true);
